@@ -1,3 +1,11 @@
 body {
-    background-color: cadetblue;
+    
+    background-image: url("https://static01.nyt.com/images/2019/09/08/arts/08Friends-cover/merlin_159726519_fde54c04-bdd0-43cd-950a-3c29331720dd-superJumbo.jpg?quality=75&auto=webp");
+    background-color: #cccccc;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(5px);
+
 }
