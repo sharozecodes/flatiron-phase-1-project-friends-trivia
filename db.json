@@ -1,0 +1,96 @@
+{
+    "questions": [
+        {
+            "question": "What is the name of the coffee shop where the Friends characters frequently meet?",
+            "options": [
+                "Java Junction",
+                "Cafe Perk",
+                "Central Perk",
+                "Starbucks"
+            ],
+            "answer": "Central Perk"
+        },
+        {
+            "question": "What is the name of Chandler's annoying ex-girlfriend who he breaks up with by pretending to move to Yemen?",
+            "options": [
+                "Monica",
+                "Rachel",
+                "Phoebe",
+                "Janice"
+            ],
+            "answer": "Janice"
+        },
+        {
+            "question": "What is the name of Ross's pet monkey?",
+            "options": [
+                "Mojo",
+                "Marcel",
+                "Max",
+                "Mickey"
+            ],
+            "answer": "Marcel"
+        },
+        {
+            "question": "Which two Friends characters end up getting married in Las Vegas after a drunken night out?",
+            "options": [
+                "Chandler and Monica",
+                "Ross and Rachel",
+                "Joey and Phoebe",
+                "Rachel and Monica"
+            ],
+            "answer": "Ross and Rachel"
+        },
+        {
+            "question": "What does Joey never share?",
+            "options": [
+                "His food",
+                "His apartment",
+                "His money",
+                "His clothes"
+            ],
+            "answer": "His food"
+        },
+        {
+            "question": "What is Chandler's middle name?",
+            "options": [
+                "Bing",
+                "Muriel",
+                "Bob",
+                "Ross"
+            ],
+            "answer": "Muriel"
+        },
+        {
+            "question": "What is the name of the actress who plays Rachel?",
+            "options": [
+                "Jennifer Aniston",
+                "Courteney Cox",
+                "Lisa Kudrow",
+                "Jennifer Lawrence"
+            ],
+            "answer": "Jennifer Aniston"
+        },
+        {
+            "question": "What is the name of Ross's ex-wife?",
+            "options": [
+                "Emily",
+                "Carol",
+                "Susan",
+                "Mona"
+            ],
+            "answer": "Carol"
+        },
+        {
+            "question": "What is the name of Joey's agent?",
+            "options": [
+                "Estelle",
+                "Phoebe",
+                "Chandler",
+                "Gunther"
+            ],
+            "answer": "Estelle"
+        }
+        
+    ]
+}
+        
