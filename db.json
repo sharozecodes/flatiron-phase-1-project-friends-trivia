@@ -11,6 +11,16 @@
             "answer": "Central Perk"
         },
         {
+            "question": "What is the name of the coffee shop where Rachel works after leaving Central Perk?",
+            "options": [
+                "Starbucks",
+                "Java Junction",
+                "The Beanery",
+                "The Central Perk II"
+            ],
+            "answer": "The Beanery"
+        },
+        {
             "question": "What is the name of Chandler's annoying ex-girlfriend who he breaks up with by pretending to move to Yemen?",
             "options": [
                 "Monica",
