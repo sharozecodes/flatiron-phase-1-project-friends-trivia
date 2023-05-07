@@ -46,7 +46,16 @@ span img {
     background-color: rgba(255, 255, 255, 0.4);
   }
 
-  ul {
+#question-container {
+    color: white;
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
+  }
+
+h2 {
     color: white;
     text-shadow:
         -1px -1px 0 black,
@@ -55,7 +64,7 @@ span img {
         1px 1px 0 black;
   }
   
-  h2 {
+#option-container {
     text-align: center;
     color: white;
     text-shadow:
@@ -64,4 +73,9 @@ span img {
         -1px 1px 0 black,
         1px 1px 0 black;
 
+  }
+
+#next-btn {
+    display: block; /* Make it a block element */
+    margin: 0 0; /* Center horizontally */
   }
