@@ -12,6 +12,11 @@ body {
 
     color: white;
     text-align: center;
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
 }
 
 span {
@@ -32,11 +37,31 @@ span img {
 
 #container {
     position: absolute;
-    top: 60%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 500px;
-    height: 500px;
-    border: 1px solid black;
+    height: 200px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+
+  ul {
+    color: white;
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
   }
   
+  h2 {
+    text-align: center;
+    color: white;
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
+
+  }
