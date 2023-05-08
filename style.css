@@ -1,12 +1,13 @@
+
+
 body {
-    
-    background-image: url("https://static01.nyt.com/images/2019/09/08/arts/08Friends-cover/merlin_159726519_fde54c04-bdd0-43cd-950a-3c29331720dd-superJumbo.jpg?quality=75&auto=webp");
-    background-color: #cccccc;
-    height: 100%;
+    background-image: url('https://static01.nyt.com/images/2019/09/08/arts/08Friends-cover/merlin_159726519_fde54c04-bdd0-43cd-950a-3c29331720dd-superJumbo.jpg?quality=75&auto=webp');
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
-}
+    background-color: black;
+  }
+  
 
 #page-title {
 
@@ -44,9 +45,13 @@ span img {
     height: 200px;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.4);
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-bottom: 50px;
   }
 
 #question-container {
+    text-align: center;
     color: white;
     text-shadow:
         -1px -1px 0 black,
@@ -57,6 +62,7 @@ span img {
 
 h2 {
     color: white;
+    text-align: center;
     text-shadow:
         -1px -1px 0 black,
         1px -1px 0 black,
@@ -64,8 +70,7 @@ h2 {
         1px 1px 0 black;
   }
   
-#option-container {
-    text-align: center;
+label {
     color: white;
     text-shadow:
         -1px -1px 0 black,
@@ -76,6 +81,5 @@ h2 {
   }
 
 #next-btn {
-    display: block; /* Make it a block element */
-    margin: 0 0; /* Center horizontally */
+    float: right;
   }
