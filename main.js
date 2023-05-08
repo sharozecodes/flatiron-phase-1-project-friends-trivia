@@ -2,9 +2,9 @@ fetch("http://localhost:3000/questions")
     .then(resp => resp.json())
     .then(questions => {
         let corrects = 0;
-        const container = document.querySelector('#question-container');
-        const optionsContainer = document.querySelector('#options-container');
-        const nextBtn = document.querySelector('#next-btn');
+        let container = document.querySelector('#question-container');
+        let optionsContainer = document.querySelector('#options-container');
+        let nextBtn = document.querySelector('#next-btn');
         let currentQuestionIndex = 0;
 
         function showQuestion() {
@@ -57,6 +57,34 @@ fetch("http://localhost:3000/questions")
             const newContainer = document.createElement("div");
             newContainer.id = "container";
             document.body.appendChild(newContainer);
+            
+
+
+            const tagLine = document.createElement('h2');
+            tagLine.textContent = "Could this task BE any easier?";
+            const questionContainer = document.createElement("div");
+            questionContainer.id = "question-container";
+            const optContainer = document.createElement("div");
+            optContainer.id = "options-container";
+            const btn = document.createElement("button");
+            btn.id = "next-btn";
+            btn.textContent = "Next";
+            newContainer.appendChild(tagLine);
+            newContainer.appendChild(questionContainer);
+            newContainer.appendChild(optContainer);
+            newContainer.appendChild(btn);
+            corrects = 0;
+            currentQuestionIndex = 0;
+            container = document.querySelector('#question-container');
+            optionsContainer = document.querySelector('#options-container');
+            nextBtn = document.querySelector('#next-btn');
+            showQuestion();
+            
+
+            const optionsContainer = document.querySelector('#options-container');
+            const nextBtn = document.querySelector('#next-btn');
+            showQuestion();
+
 
 
         }
