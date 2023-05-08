@@ -1,6 +1,7 @@
 fetch("http://localhost:3000/questions")
     .then(resp => resp.json())
     .then(questions => {
+        let corrects = 0;
         const container = document.querySelector('#question-container');
         const optionsContainer = document.querySelector('#options-container');
         const nextBtn = document.querySelector('#next-btn');
@@ -29,6 +30,7 @@ fetch("http://localhost:3000/questions")
         const answer = questions[currentQuestionIndex].answer;
         if (selectedOption === answer) {
             console.log('Correct!');
+            corrects++;
         } else {
             console.log('Incorrect!');
         }
@@ -41,10 +43,22 @@ fetch("http://localhost:3000/questions")
         currentQuestionIndex++;
         if (currentQuestionIndex === questions.length) {
             console.log('End of questionnaire!');
+            endTrivia();
             return;
         }
         showQuestion();
+        console.log(corrects)
         });
+
+        function endTrivia() {
+
+            const element = document.querySelector("#container");
+            element.remove();
+            const newContainer = document.createElement("div");
+            newContainer.id = "container";
+
+
+        }
     });
 
 // .then(questions => {
