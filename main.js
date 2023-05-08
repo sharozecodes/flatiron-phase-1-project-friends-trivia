@@ -44,7 +44,6 @@ fetch("http://localhost:3000/questions")
         if (currentQuestionIndex === questions.length) {
             console.log('End of questionnaire!');
             endTrivia();
-            return;
         }
         showQuestion();
         console.log(corrects)
@@ -79,11 +78,7 @@ fetch("http://localhost:3000/questions")
             optionsContainer = document.querySelector('#options-container');
             nextBtn = document.querySelector('#next-btn');
             showQuestion();
-            
-
-            const optionsContainer = document.querySelector('#options-container');
-            const nextBtn = document.querySelector('#next-btn');
-            showQuestion();
+        
 
 
 
