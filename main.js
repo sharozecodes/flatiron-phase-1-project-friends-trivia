@@ -18,6 +18,7 @@ fetch("http://localhost:3000/questions")
                 radioBtn.value = option;
                 label.appendChild(radioBtn);
                 label.append(option);
+                label.style.display = 'block';
                 optionsContainer.appendChild(label);
             }
         }
