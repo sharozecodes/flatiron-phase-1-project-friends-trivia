@@ -7,21 +7,21 @@ fetch("http://localhost:3000/questions")
         let currentQuestionIndex = 0;
 
         function showQuestion() {
-        container.innerHTML = questions[currentQuestionIndex].question;
-        optionsContainer.innerHTML = '';
-        for (let i = 0; i < questions[currentQuestionIndex].options.length; i++) {
-            const option = questions[currentQuestionIndex].options[i];
-            const label = document.createElement('label');
-            const radioBtn = document.createElement('input');
-            radioBtn.type = 'radio';
-            radioBtn.name = 'option';
-            radioBtn.value = option;
-            label.appendChild(radioBtn);
-            label.append(option);
-            label.style.display = 'block';
-            optionsContainer.appendChild(label);
+            container.textContent = questions[currentQuestionIndex].question;
+            optionsContainer.textContent = '';
+            for (let i = 0; i < questions[currentQuestionIndex].options.length; i++) {
+                const option = questions[currentQuestionIndex].options[i];
+                const label = document.createElement('label');
+                const radioBtn = document.createElement('input');
+                radioBtn.type = 'radio';
+                radioBtn.name = 'option';
+                radioBtn.value = option;
+                label.appendChild(radioBtn);
+                label.append(option);
+                optionsContainer.appendChild(label);
+            }
         }
-        }
+        
 
         function checkAnswer() {
         const selectedOption = document.querySelector('input[name="option"]:checked').value;
