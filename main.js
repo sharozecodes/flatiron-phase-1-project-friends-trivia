@@ -46,11 +46,11 @@ fetch("http://localhost:3000/questions")
             endTrivia();
         }
         showQuestion();
-        console.log(corrects)
+        console.log(corrects);
         });
 
         function endTrivia() {
-
+            console.log(corrects);
             const element = document.querySelector("#container");
             element.remove();
             const newContainer = document.createElement("div");
