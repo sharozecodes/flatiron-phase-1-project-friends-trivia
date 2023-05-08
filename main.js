@@ -7,10 +7,10 @@ fetch("http://localhost:3000/questions")
         let currentQuestionIndex = 0;
 
         function showQuestion() {
-            container.textContent = questions[currentQuestionIndex].question;
+            const currentQuestion = questions[currentQuestionIndex];
+            container.textContent = currentQuestion.question;
             optionsContainer.textContent = '';
-            for (let i = 0; i < questions[currentQuestionIndex].options.length; i++) {
-                const option = questions[currentQuestionIndex].options[i];
+            currentQuestion.options.forEach(option => {
                 const label = document.createElement('label');
                 const radioBtn = document.createElement('input');
                 radioBtn.type = 'radio';
@@ -20,7 +20,7 @@ fetch("http://localhost:3000/questions")
                 label.append(option);
                 label.style.display = 'block';
                 optionsContainer.appendChild(label);
-            }
+            })
         }
         
 
