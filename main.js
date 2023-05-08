@@ -56,6 +56,7 @@ fetch("http://localhost:3000/questions")
             element.remove();
             const newContainer = document.createElement("div");
             newContainer.id = "container";
+            document.body.appendChild(newContainer);
 
 
         }
