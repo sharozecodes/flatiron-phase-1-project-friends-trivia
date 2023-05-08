@@ -19,7 +19,19 @@
                 "The Central Perk II"
             ],
             "answer": "The Beanery"
-        }        
+        },       
+
+        {
+            "question": "What is the name of Joey's agent?",
+            "options": [
+                "Estelle",
+                "Phoebe",
+                "Chandler",
+                "Gunther"
+            ],
+            "answer": "Estelle"
+        }
+
     ]
 }
         
