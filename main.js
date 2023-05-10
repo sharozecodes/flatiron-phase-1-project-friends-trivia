@@ -49,9 +49,10 @@ fetch("http://localhost:3000/questions")
         console.log(corrects);
         });
         
-        const form = document.getElementById("player-name-form");
+        const form = document.querySelector("form");
         form.addEventListener("submit", (event) => {
-            
+            event.preventDefault();
+            console.log(event.target[0].value)
         })
 
 
