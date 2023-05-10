@@ -53,6 +53,7 @@ fetch("http://localhost:3000/questions")
         form.addEventListener("submit", (event) => {
             event.preventDefault();
             console.log(event.target[0].value)
+            form.reset();
         })
 
 
