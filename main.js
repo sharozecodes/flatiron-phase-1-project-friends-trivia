@@ -48,6 +48,12 @@ fetch("http://localhost:3000/questions")
         showQuestion();
         console.log(corrects);
         });
+        
+        const form = document.getElementById("player-name-form");
+        form.addEventListener("submit", (event) => {
+            
+        })
+
 
         function endTrivia() {
             console.log(corrects);
