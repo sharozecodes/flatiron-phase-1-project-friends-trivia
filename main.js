@@ -35,9 +35,13 @@ fetch("http://localhost:3000/questions")
         const selectedOption = document.querySelector('input[name="option"]:checked').value;
         const answer = questions[currentQuestionIndex].answer;
         if (selectedOption === answer) {
-            console.log('Correct!');
+            //console.log('Correct!');
+            toastColor("green");
+            showToast('Perfection!', 800);
             corrects++;
         } else {
+            toastColor("red");
+            showToast('Moo Point!', 800);
             console.log('Incorrect!');
         }
         }
@@ -142,7 +146,34 @@ fetch("http://localhost:3000/questions")
 
                 console.log(players)})
 
-
     }
+
+    function showToast(message, duration = 3000) {
+        const toastContainer = document.getElementById('toast-container');
+        const toast = document.getElementById('toast');
+      
+        // Update the toast message and display it
+        toast.textContent = message;
+        toastContainer.style.display = 'block';
+      
+        // Hide the toast after the specified duration
+        setTimeout(() => {
+          toastContainer.style.display = 'none';
+        }, duration);
+      }
+
+
+    function toastColor(color) {
+        const notification = document.getElementById("toast");
+        if (color.toLowerCase() === "green") {
+          notification.style["background-color"] = 'rgba(0, 255, 0, 0.4)';
+        } else {
+          notification.style["background-color"] = 'rgba(255, 0, 0, 0.4)';
+        }
+      }
+      
+      
+     
+      
 
 
