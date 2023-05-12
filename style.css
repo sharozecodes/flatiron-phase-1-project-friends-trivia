@@ -50,6 +50,7 @@ span img {
     background-color: rgba(255, 255, 255, 0.4);
     padding: 15px;
     min-width: 530px;
+    height: 206px;
     backdrop-filter: blur(3px);
     display: none;
   }
@@ -64,6 +65,7 @@ span img {
     align-items: center;
     padding: 15px;
     min-width: 530px;
+    height: 206px;
     backdrop-filter: blur(3px);
   }
 

@@ -52,7 +52,7 @@ fetch("http://localhost:3000/questions")
             endTrivia();
         }
         showQuestion();
-        console.log(corrects);
+        // console.log(corrects);
         });
         
         const form = document.querySelector("form");
