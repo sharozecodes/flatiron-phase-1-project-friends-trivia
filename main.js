@@ -71,6 +71,7 @@ fetch("http://localhost:3000/questions")
 
         function endTrivia() {
             console.log(corrects);
+            viewScoreBoard();
 
 
             let newPlayer = { player: playerName, score: corrects };
@@ -82,8 +83,6 @@ fetch("http://localhost:3000/questions")
                 "Content-Type": "application/json"
             }
             })
-            .then(resp => resp.json())   
-            .then(data => console.log(data))
 
 
 
@@ -134,4 +133,16 @@ fetch("http://localhost:3000/questions")
 
         }
     });
+
+
+    function viewScoreBoard(){
+        fetch("http://localhost:3000/players")
+            .then(resp => resp.json())
+            .then(players => {
+
+                console.log(players)})
+
+
+    }
+
 
