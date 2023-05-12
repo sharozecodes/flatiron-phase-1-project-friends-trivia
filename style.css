@@ -121,4 +121,51 @@ label {
     background-color: rgba(255, 255, 255, 0.4);
     color: #fff;
   }
+
+
+
+
+
+  
+  #choice-container {
+
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 15px;
+    min-width: 530px;
+    height: 206px;
+    backdrop-filter: blur(3px);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  
+  .buttons-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  #play, #score {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: gray;
+    color: white;
+    font-size: 18px;
+    font-family: "GWFF";
+    cursor: pointer;
+    text-shadow:
+        -0.9px -0.9px 0 black,
+        0.9px -0.9px 0 black,
+        -0.9px 0.9px 0 black,
+        0.9px 0.9px 0 black;
+  }
+  
+  button:hover {
+    background-color: #555;
+  }
   
