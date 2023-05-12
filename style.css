@@ -51,12 +51,17 @@ span img {
     padding: 15px;
     min-width: 530px;
     backdrop-filter: blur(3px);
+    display: none;
   }
 
 #form-container {
     
+    margin: 0 auto;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 15px;
     min-width: 530px;
     backdrop-filter: blur(3px);
@@ -71,6 +76,7 @@ span img {
         0.9px -0.9px 0 black,
         -0.9px 0.9px 0 black,
         0.9px 0.9px 0 black;
+
   }
 
 h2 {

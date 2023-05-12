@@ -1,13 +1,18 @@
 fetch("http://localhost:3000/questions")
     .then(resp => resp.json())
     .then(questions => {
+
         let corrects = 0;
+        let formContainer = document.querySelector('#form-container');
         let container = document.querySelector('#question-container');
         let optionsContainer = document.querySelector('#options-container');
         let nextBtn = document.querySelector('#next-btn');
         let currentQuestionIndex = 0;
+        //container.style.display = "none";
 
         function showQuestion() {
+          //  formContainer.style.display = "none";
+            // container.display = "block";
             const currentQuestion = questions[currentQuestionIndex];
             container.textContent = currentQuestion.question;
             optionsContainer.textContent = '';
@@ -54,6 +59,11 @@ fetch("http://localhost:3000/questions")
             event.preventDefault();
             console.log(event.target[0].value)
             form.reset()
+            let container = document.querySelector('#container');
+            container.style.display = "block"
+            formContainer.style.display = "none"
+
+
         })
 
 
@@ -61,6 +71,8 @@ fetch("http://localhost:3000/questions")
             console.log(corrects);
             const element = document.querySelector("#container");
             element.remove();
+            let formCont = document.querySelector('#form-container');
+            formCont.style.display = "flex";
             const newContainer = document.createElement("div");
             newContainer.id = "container";
             document.body.appendChild(newContainer);
@@ -91,6 +103,7 @@ fetch("http://localhost:3000/questions")
                 currentQuestionIndex++;
                 if (currentQuestionIndex === questions.length) {
                     console.log('End of questionnaire!');
+                    newContainer.style.display = "none";
                     endTrivia();
                 }
                 showQuestion();
