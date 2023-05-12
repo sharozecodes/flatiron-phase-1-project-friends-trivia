@@ -8,6 +8,7 @@ fetch("http://localhost:3000/questions")
         let optionsContainer = document.querySelector('#options-container');
         let nextBtn = document.querySelector('#next-btn');
         let currentQuestionIndex = 0;
+        let player = '';
         //container.style.display = "none";
 
         function showQuestion() {
@@ -57,7 +58,8 @@ fetch("http://localhost:3000/questions")
         const form = document.querySelector("form");
         form.addEventListener("submit", (event) => {
             event.preventDefault();
-            console.log(event.target[0].value)
+            player = event.target[0].value;
+            console.log(player);
             form.reset()
             let container = document.querySelector('#container');
             container.style.display = "block"
