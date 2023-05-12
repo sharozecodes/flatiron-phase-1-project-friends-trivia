@@ -1,56 +1,56 @@
 {
-    "questions": [
-        {
-            "question": "What is the name of the coffee shop where the Friends characters frequently meet?",
-            "options": [
-                "Java Junction",
-                "Cafe Perk",
-                "Central Perk",
-                "Starbucks"
-            ],
-            "answer": "Central Perk"
-        },
-        {
-            "question": "What is the name of the coffee shop where Rachel works after leaving Central Perk?",
-            "options": [
-                "Starbucks",
-                "Java Junction",
-                "The Beanery",
-                "The Central Perk II"
-            ],
-            "answer": "The Beanery"
-        },       
-
-        {
-            "question": "What is the name of Joey's agent?",
-            "options": [
-                "Estelle",
-                "Phoebe",
-                "Chandler",
-                "Gunther"
-            ],
-            "answer": "Estelle"
-        },
-
-        {
-            "question": "What is the name of Chandler's annoying ex-girlfriend who he breaks up with by pretending to move to Yemen?",
-            "options": [
-                "Monica",
-                "Rachel",
-                "Phoebe",
-                "Janice"
-            ],
-            "answer": "Janice"
-
-        }
-        
-
-
-    ],
-
-    "users": [
-
-
-    ]
+  "questions": [
+    {
+      "question": "What is the name of the coffee shop where the Friends characters frequently meet?",
+      "options": [
+        "Java Junction",
+        "Cafe Perk",
+        "Central Perk",
+        "Starbucks"
+      ],
+      "answer": "Central Perk"
+    },
+    {
+      "question": "What is the name of the coffee shop where Rachel works after leaving Central Perk?",
+      "options": [
+        "Starbucks",
+        "Java Junction",
+        "The Beanery",
+        "The Central Perk II"
+      ],
+      "answer": "The Beanery"
+    },
+    {
+      "question": "What is the name of Joey's agent?",
+      "options": [
+        "Estelle",
+        "Phoebe",
+        "Chandler",
+        "Gunther"
+      ],
+      "answer": "Estelle"
+    },
+    {
+      "question": "What is the name of Chandler's annoying ex-girlfriend who he breaks up with by pretending to move to Yemen?",
+      "options": [
+        "Monica",
+        "Rachel",
+        "Phoebe",
+        "Janice"
+      ],
+      "answer": "Janice"
+    }
+  ],
+  "players": [
+    {
+      "player": "hello",
+      "score": 0,
+      "id": 1
+    },
+    {
+      "player": "john",
+      "score": 4,
+      "id": 2
+    }
+  ]
 }
-        

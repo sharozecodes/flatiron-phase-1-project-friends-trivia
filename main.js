@@ -8,7 +8,7 @@ fetch("http://localhost:3000/questions")
         let optionsContainer = document.querySelector('#options-container');
         let nextBtn = document.querySelector('#next-btn');
         let currentQuestionIndex = 0;
-        let player = '';
+        let playerName = '';
         //container.style.display = "none";
 
         function showQuestion() {
@@ -58,8 +58,8 @@ fetch("http://localhost:3000/questions")
         const form = document.querySelector("form");
         form.addEventListener("submit", (event) => {
             event.preventDefault();
-            player = event.target[0].value;
-            console.log(player);
+            playerName = event.target[0].value;
+            //console.log(playerName);
             form.reset()
             let container = document.querySelector('#container');
             container.style.display = "block"
@@ -71,6 +71,22 @@ fetch("http://localhost:3000/questions")
 
         function endTrivia() {
             console.log(corrects);
+
+
+            let newPlayer = { player: playerName, score: corrects };
+
+            fetch("http://localhost:3000/players", {
+            method: "POST",
+            body: JSON.stringify(newPlayer),
+            headers: {
+                "Content-Type": "application/json"
+            }
+            })
+            .then(resp => resp.json())   
+            .then(data => console.log(data))
+
+
+
             const element = document.querySelector("#container");
             element.remove();
             let formCont = document.querySelector('#form-container');
