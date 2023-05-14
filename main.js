@@ -10,6 +10,7 @@ fetch("http://localhost:3000/questions")
         let scoreBtn = document.querySelector('#score');
         let replayBtn = document.querySelector('#replay');
         let scorebBtn = document.querySelector('#scoreb');
+        let backBtn = document.querySelector('#back');
         let currentQuestionIndex = 0;
         let playerName = '';
         //container.style.display = "none";
@@ -66,7 +67,7 @@ fetch("http://localhost:3000/questions")
         })
     
 
-        menuButtonEventListeners(playBtn, scoreBtn, replayBtn, scorebBtn);
+        menuButtonEventListeners(playBtn, scoreBtn, replayBtn, scorebBtn, backBtn);
         
         const form = document.querySelector("form");
         form.addEventListener("submit", (event) => {
@@ -148,7 +149,7 @@ fetch("http://localhost:3000/questions")
             .then(players => {
                 console.log("hohoho")
                 createTable(sortScoreBoard(players))})
-
+        displayScoreboard();
     }
 
     function showToast(message, duration = 3000) {
@@ -179,19 +180,36 @@ fetch("http://localhost:3000/questions")
     function startQuestions(){
         let choiceContainer = document.querySelector('#choice-container');
         let resultContainer = document.querySelector('#result-container');
+        let scoreContainer = document.querySelector('#score-container');
         let container = document.querySelector('#container');
             container.style.display = "block"
             choiceContainer.style.display = "none"
             resultContainer.style.display = "none"
+            scoreContainer.style.display = "none"
     }
 
     function tryAgain(){
         let formContainer = document.querySelector('#form-container');
         let resultContainer = document.querySelector('#result-container');
+        let scoreContainer = document.querySelector('#score-container');
         let container = document.querySelector('#container');
             container.style.display = "none"
             formContainer.style.display = "flex"
             resultContainer.style.display = "none"
+            scoreContainer.style.display = "none"
+    }
+
+    function displayScoreboard(){
+        let formContainer = document.querySelector('#form-container');
+        let resultContainer = document.querySelector('#result-container');
+        let scoreContainer = document.querySelector('#score-container');
+        let choiceContainer = document.querySelector('#choice-container');
+        let container = document.querySelector('#container');
+            container.style.display = "none"
+            formContainer.style.display = "none"
+            resultContainer.style.display = "none"
+            choiceContainer.style.display = "none"
+            scoreContainer.style.display = "flex"
     }
 
     function saveScore(playerName, corrects){
@@ -208,10 +226,12 @@ fetch("http://localhost:3000/questions")
     function displayGreeting(playerName) {
         let formContainer = document.querySelector('#form-container');
         let choiceContainer = document.querySelector('#choice-container');
+        let scoreContainer = document.querySelector('#score-container');
         let greeting = choiceContainer.querySelector('#greeting');
 
         choiceContainer.style.display = "flex"
         formContainer.style.display = "none"
+        scoreContainer.style.display = "none"
         greeting.textContent = `Hey there, ${playerName}! How you doin'?`
         
     }
@@ -219,11 +239,13 @@ fetch("http://localhost:3000/questions")
     function displayResult(playerName, score, total){
         let resultContainer = document.querySelector('#result-container');
         let container = document.querySelector('#container');
+        let scoreContainer = document.querySelector('#score-container');
         let result = resultContainer.querySelector('#player-result');
         let scoreTotal = resultContainer.querySelector("#score-total");
         
         container.style.display = "none"
         resultContainer.style.display = "flex"
+        scoreContainer.style.display = "none"
         const percentage = score/total;
         console.log(percentage)
         
@@ -232,7 +254,7 @@ fetch("http://localhost:3000/questions")
 
     }
 
-    function menuButtonEventListeners(playBtn, scoreBtn, replayBtn, scorebBtn){
+    function menuButtonEventListeners(playBtn, scoreBtn, replayBtn, scorebBtn, backBtn){
         
         playBtn.addEventListener('click', () => {
             startQuestions();
@@ -246,6 +268,9 @@ fetch("http://localhost:3000/questions")
         scorebBtn.addEventListener('click', () => {
             viewScoreBoard();
         })
+        backBtn.addEventListener('click', () => {
+            tryAgain();
+        })
     
     }
 
@@ -254,34 +279,6 @@ fetch("http://localhost:3000/questions")
       }
       
     function createTable(scoreBoard){
-        // const tableContainer = document.getElementById("table-container");
-        // const table = document.createElement('table');
-        
-        // // Create the rows and cells
-        // for (let i = 0; i < 5; i++) {
-        // // Create a row
-        // const row = document.createElement("tr");
-        // const cell = document.createElement("td");
-        // cell.textContent = `${scoreBoard[i].player} , ${scoreBoard[i].score}`;
-        // row.appendChild(cell);
-        // }
-
-        // // Create two cells
-        // for (let j = 0; j < 5; j++) {
-            
-        // }
-
-        // // Add the row to the table
-        // table.appendChild(row);
-        // }
-
-        // // Append the table to the div
-        // myDiv.appendChild(table);
-
-
-        // // Add the table to the document
-        // document.body.appendChild(table);
-
         const tbody = document.getElementById('table-body');
         while (tbody.firstChild) {
             tbody.removeChild(tbody.firstChild);
@@ -289,7 +286,7 @@ fetch("http://localhost:3000/questions")
 
         // Loop through the array and create a new row for each object
         for (let i = 0; i < scoreBoard.length; i++) {
-            if(i===10){
+            if(i===5){
                 break; 
             } else {
 
