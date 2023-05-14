@@ -37,11 +37,11 @@ fetch("http://localhost:3000/questions")
         if (selectedOption === answer) {
             //console.log('Correct!');
             toastColor("green");
-            showToast('Perfection!', 800);
+            showToast('Perfection!', 300);
             corrects++;
         } else {
             toastColor("red");
-            showToast('Moo Point!', 800);
+            showToast('Moo Point!', 300);
             console.log('Incorrect!');
         }
         }
@@ -151,6 +151,7 @@ fetch("http://localhost:3000/questions")
     function showToast(message, duration = 3000) {
         const toastContainer = document.getElementById('toast-container');
         const toast = document.getElementById('toast');
+        toast.style.display = "flex";
       
         // Update the toast message and display it
         toast.textContent = message;
