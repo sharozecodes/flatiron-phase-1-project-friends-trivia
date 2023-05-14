@@ -45,7 +45,6 @@ fetch("http://localhost:3000/questions")
         } else {
             toastColor("red");
             showToast('Moo Point!', 300);
-            console.log('Incorrect!');
         }
         }
 
@@ -57,15 +56,11 @@ fetch("http://localhost:3000/questions")
                 checkAnswer();
                 currentQuestionIndex++;
                 if (currentQuestionIndex === questions.length) {
-                    console.log('End of questionnaire!');
-                  //  displayGreeting(playerName, corrects, questions.length);
                     endTrivia();
                 }
                 showQuestion();
-                // console.log(corrects);
             } catch (error) {
                 alert("Please select an option!")
-                //console.log(error);
               }
         
         })
@@ -80,7 +75,6 @@ fetch("http://localhost:3000/questions")
             if (playerName === '')
                 alert('Please enter a name!');
             else {
-                 //console.log(playerName);
             form.reset()
             displayGreeting(playerName);
 
@@ -93,22 +87,11 @@ fetch("http://localhost:3000/questions")
 
 
         function endTrivia() {
-            console.log(corrects);
-            displayResult();
-            
+            displayResult(playerName, corrects, questions.length);
 
             saveScore(playerName,corrects);
-
-            
-
-            viewScoreBoard();
-
-
-
             const element = document.querySelector("#container");
             element.remove();
-            // let formCont = document.querySelector('#form-container');
-            // formCont.style.display = "flex";
             const newContainer = document.createElement("div");
             newContainer.id = "container";
             document.body.appendChild(newContainer);
@@ -135,16 +118,21 @@ fetch("http://localhost:3000/questions")
             nextBtn = document.querySelector('#next-btn');
             showQuestion();
             nextBtn.addEventListener('click', () => {
-                checkAnswer();
-                currentQuestionIndex++;
-                if (currentQuestionIndex === questions.length) {
-                    console.log('End of questionnaire!');
-                 //   newContainer.style.display = "none";
-                    endTrivia();
-                }
-                showQuestion();
-                console.log(corrects)
-                });
+                try{
+                    checkAnswer();
+                    currentQuestionIndex++;
+                    if (currentQuestionIndex === questions.length) {
+                        endTrivia();
+                    }
+                    showQuestion();
+                    
+                }catch (error) {
+                    alert("Please select an option!")
+                  }
+
+                })
+
+                
         
         
 
@@ -232,9 +220,15 @@ fetch("http://localhost:3000/questions")
         let resultContainer = document.querySelector('#result-container');
         let container = document.querySelector('#container');
         let result = resultContainer.querySelector('#player-result');
-            container.style.display = "none"
-            resultContainer.style.display = "flex"
-            result.textContent = `Good Job ${playerName}!\nYou scored a ${score} out of ${total}!`;
+        let scoreTotal = resultContainer.querySelector("#score-total");
+        
+        container.style.display = "none"
+        resultContainer.style.display = "flex"
+        const percentage = score/total;
+        console.log(percentage)
+        
+        result.textContent = `Good Job ${playerName}!`;
+        scoreTotal.textContent = `You scored a ${score} out of ${total}.`;
 
     }
 
