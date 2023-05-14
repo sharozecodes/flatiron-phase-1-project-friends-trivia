@@ -75,16 +75,9 @@ fetch("http://localhost:3000/questions")
             tryAgain();
             
 
+            saveScore(playerName,corrects);
 
-            let newPlayer = { player: playerName, score: corrects };
-
-            fetch("http://localhost:3000/players", {
-            method: "POST",
-            body: JSON.stringify(newPlayer),
-            headers: {
-                "Content-Type": "application/json"
-            }
-            })
+            
 
             viewScoreBoard();
 
@@ -185,7 +178,17 @@ fetch("http://localhost:3000/questions")
         let container = document.querySelector('#container');
             container.style.display = "none"
             formContainer.style.display = "flex"
-        
+    }
+
+    function saveScore(playerName, corrects){
+        let newPlayer = { player: playerName, score: corrects };
+            fetch("http://localhost:3000/players", {
+            method: "POST",
+            body: JSON.stringify(newPlayer),
+            headers: {
+                "Content-Type": "application/json"
+            }
+            })
     }
       
 
