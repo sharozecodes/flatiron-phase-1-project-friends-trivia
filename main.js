@@ -39,7 +39,6 @@ fetch("http://localhost:3000/questions")
         const selectedOption = document.querySelector('input[name="option"]:checked').value;
         const answer = questions[currentQuestionIndex].answer;
         if (selectedOption === answer) {
-            //console.log('Correct!');
             toastColor("green");
             showToast('Perfection!', 300);
             corrects++;

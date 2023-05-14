@@ -45,21 +45,26 @@ span img {
   }
 
 #container {
-    
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.4);
+    margin-top: -37px;
     padding: 18px;
     width: 530px;
+   /* padding-top: 65px;
+    height: 293px; 
+    padding-bottom: 0px; */
     height: 340px;
     backdrop-filter: blur(3px);
     display: none;
   }
 
+
+
 #form-container {
     
     font-family: "GWFF";
     font-size: 16px;
-    margin-top: 1px;
+    margin-top: -37px;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.4);
     display: flex;
@@ -117,7 +122,7 @@ label {
 
 #toast-container {
     position: fixed;
-    top: 64%;
+    top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 9999;
@@ -143,6 +148,7 @@ label {
     font-family: "GWFF";
     font-size: 16px;
     border-radius: 10px;
+    margin-top: -37px;
     background-color: rgba(255, 255, 255, 0.4);
     padding: 18px;
     width: 530px;
@@ -187,6 +193,7 @@ label {
     font-family: "GWFF";
     font-size: 16px;
     border-radius: 10px;
+    margin-top: -37px;
     background-color: rgba(255, 255, 255, 0.4);
     padding: 18px;
     width: 530px;
@@ -210,6 +217,7 @@ label {
     font-family: "GWFF";
     font-size: 16px;
     border-radius: 10px;
+    margin-top: -37px;
     background-color: rgba(255, 255, 255, 0.4);
     padding: 18px;
     width: 530px;
