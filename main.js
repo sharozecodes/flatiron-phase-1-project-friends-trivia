@@ -13,11 +13,8 @@ fetch("http://localhost:3000/questions")
         let backBtn = document.querySelector('#back');
         let currentQuestionIndex = 0;
         let playerName = '';
-        //container.style.display = "none";
 
         function showQuestion() {
-          //  formContainer.style.display = "none";
-            // container.display = "block";
             const currentQuestion = questions[currentQuestionIndex];
             container.textContent = currentQuestion.question;
             optionsContainer.textContent = '';
@@ -34,7 +31,6 @@ fetch("http://localhost:3000/questions")
             })
         }
         
-
         function checkAnswer() {
         const selectedOption = document.querySelector('input[name="option"]:checked').value;
         const answer = questions[currentQuestionIndex].answer;
@@ -50,7 +46,6 @@ fetch("http://localhost:3000/questions")
 
         showQuestion();
 
-
         nextBtn.addEventListener('click', () => {
             try {
                 checkAnswer();
@@ -61,11 +56,9 @@ fetch("http://localhost:3000/questions")
                 showQuestion();
             } catch (error) {
                 alert("Please select an option!")
-              }
-        
+              }     
         })
     
-
         menuButtonEventListeners(playBtn, scoreBtn, replayBtn, scorebBtn, backBtn);
         
         const form = document.querySelector("form");
@@ -77,27 +70,19 @@ fetch("http://localhost:3000/questions")
             else {
             form.reset()
             displayGreeting(playerName);
-
             }
-               
-           
-
-
         })
 
 
         function endTrivia() {
             displayResult(playerName, corrects, questions.length);
-
             saveScore(playerName,corrects);
             const element = document.querySelector("#container");
             element.remove();
+
             const newContainer = document.createElement("div");
             newContainer.id = "container";
             document.body.appendChild(newContainer);
-            
-
-
             const tagLine = document.createElement('h2');
             tagLine.textContent = "Could this task BE any easier?";
             const questionContainer = document.createElement("div");
@@ -112,9 +97,7 @@ fetch("http://localhost:3000/questions")
             const imgHolder = document.createElement("img");
             imgHolder.src = "./images/friends.PNG";
             imgHolder.alt = "Overlay image";
-            imgContainer.appendChild(imgHolder);
-
-            
+            imgContainer.appendChild(imgHolder);       
             newContainer.appendChild(tagLine);
             newContainer.appendChild(questionContainer);
             newContainer.appendChild(optContainer);
@@ -122,6 +105,7 @@ fetch("http://localhost:3000/questions")
             newContainer.appendChild(imgContainer);
             corrects = 0;
             currentQuestionIndex = 0;
+
             container = document.querySelector('#question-container');
             optionsContainer = document.querySelector('#options-container');
             nextBtn = document.querySelector('#next-btn');
@@ -133,20 +117,11 @@ fetch("http://localhost:3000/questions")
                     if (currentQuestionIndex === questions.length) {
                         endTrivia();
                     }
-                    showQuestion();
-                    
+                    showQuestion();                 
                 }catch (error) {
                     alert("Please select an option!")
                   }
-
                 })
-
-                
-        
-        
-
-
-
         }
     });
 
@@ -155,7 +130,6 @@ fetch("http://localhost:3000/questions")
         fetch("http://localhost:3000/players")
             .then(resp => resp.json())
             .then(players => {
-                console.log("hohoho")
                 createTable(sortScoreBoard(players))})
         displayScoreboard();
     }
@@ -165,11 +139,9 @@ fetch("http://localhost:3000/questions")
         const toast = document.getElementById('toast');
         toast.style.display = "flex";
       
-        // Update the toast message and display it
         toast.textContent = message;
         toastContainer.style.display = 'block';
       
-        // Hide the toast after the specified duration
         setTimeout(() => {
           toastContainer.style.display = 'none';
         }, duration);
@@ -255,11 +227,9 @@ fetch("http://localhost:3000/questions")
         resultContainer.style.display = "flex"
         scoreContainer.style.display = "none"
         const percentage = score/total;
-        console.log(percentage)
         
-        result.textContent = `Good Job ${playerName}!`;
+        result.textContent = `${getGrade(percentage)}, ${playerName}!`;
         scoreTotal.textContent = `You scored a ${score} out of ${total}.`;
-
     }
 
     function menuButtonEventListeners(playBtn, scoreBtn, replayBtn, scorebBtn, backBtn){
@@ -283,21 +253,40 @@ fetch("http://localhost:3000/questions")
     }
 
     function sortScoreBoard(scoreBoard){
-        return scoreBoard.sort((a, b) => b.score - a.score);
+       return scoreBoard.sort((a, b) => {
+            if (a.score === b.score) {
+              return b.id - a.id;
+            }
+            return b.score - a.score;
+          });
+          
       }
+
+      function getGrade(percentage) {
+        if (percentage >= 0.9) {
+          return 'Excellent job';
+        } else if (percentage >= 0.8) {
+          return 'Well done'
+        } else if (percentage >= 0.7) {
+          return 'Good job'
+        } else if (percentage >= 0.6) {
+          return 'Not bad'
+        } else {
+            return "Yeah! We're definitely on a break"
+          };
+        }
       
+         
     function createTable(scoreBoard){
         const tbody = document.getElementById('table-body');
         while (tbody.firstChild) {
             tbody.removeChild(tbody.firstChild);
           }
 
-        // Loop through the array and create a new row for each object
         for (let i = 0; i < scoreBoard.length; i++) {
             if(i===5){
                 break; 
             } else {
-
             const player = scoreBoard[i].player;
             const score = scoreBoard[i].score;
 
@@ -310,7 +299,6 @@ fetch("http://localhost:3000/questions")
 
             row.appendChild(playerCell);
             row.appendChild(scoreCell);
-
             tbody.appendChild(row);
         }
         }

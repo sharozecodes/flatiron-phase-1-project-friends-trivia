@@ -39,248 +39,29 @@
         "Janice"
       ],
       "answer": "Janice"
-    }
+    },
+    {
+      "question": "What is the name of the street the Friends characters live on?",
+      "options": [
+          "Central Park West",
+          "Madison Avenue",
+          "Lexington Street",
+          "Grove Street"
+      ],
+      "answer": "Grove Street"
+  }
+
   ],
   "players": [
     {
-      "player": "Juniper",
+      "player": "john",
       "score": 4,
       "id": 1
     },
     {
-      "player": "john",
-      "score": 1,
+      "player": "Sharoze",
+      "score": 0,
       "id": 2
-    },
-    {
-      "player": "Sharoze",
-      "score": 3,
-      "id": 3
-    },
-    {
-      "player": "hello",
-      "score": 4,
-      "id": 4
-    },
-    {
-      "player": "minal",
-      "score": 0,
-      "id": 5
-    },
-    {
-      "player": "huhuh",
-      "score": 0,
-      "id": 6
-    },
-    {
-      "player": "Sharoze",
-      "score": 1,
-      "id": 7
-    },
-    {
-      "player": "huhuh",
-      "score": 2,
-      "id": 8
-    },
-    {
-      "player": "Sharoze",
-      "score": 3,
-      "id": 9
-    },
-    {
-      "player": "Sharoze",
-      "score": 2,
-      "id": 10
-    },
-    {
-      "player": "Sharoze",
-      "score": 4,
-      "id": 11
-    },
-    {
-      "player": "huhuh",
-      "score": 2,
-      "id": 12
-    },
-    {
-      "player": "john",
-      "score": 4,
-      "id": 13
-    },
-    {
-      "player": "john",
-      "score": 1,
-      "id": 14
-    },
-    {
-      "player": "john",
-      "score": 1,
-      "id": 15
-    },
-    {
-      "player": "john",
-      "score": 2,
-      "id": 16
-    },
-    {
-      "player": "huhuh",
-      "score": 2,
-      "id": 17
-    },
-    {
-      "player": "huhuh",
-      "score": 1,
-      "id": 18
-    },
-    {
-      "player": "hello",
-      "score": 0,
-      "id": 19
-    },
-    {
-      "player": "hello",
-      "score": 2,
-      "id": 20
-    },
-    {
-      "player": "john",
-      "score": 1,
-      "id": 21
-    },
-    {
-      "player": "hello",
-      "score": 0,
-      "id": 22
-    },
-    {
-      "player": "hello",
-      "score": 1,
-      "id": 23
-    },
-    {
-      "player": "hello",
-      "score": 1,
-      "id": 24
-    },
-    {
-      "player": "hello",
-      "score": 1,
-      "id": 25
-    },
-    {
-      "player": "Sharoze",
-      "score": 3,
-      "id": 26
-    },
-    {
-      "player": "George",
-      "score": 4,
-      "id": 27
-    },
-    {
-      "player": "Koko",
-      "score": 4,
-      "id": 28
-    },
-    {
-      "player": "huhuh",
-      "score": 2,
-      "id": 29
-    },
-    {
-      "player": "john",
-      "score": 1,
-      "id": 30
-    },
-    {
-      "player": "hello",
-      "score": 0,
-      "id": 31
-    },
-    {
-      "player": "john",
-      "score": 1,
-      "id": 32
-    },
-    {
-      "player": "hello",
-      "score": 2,
-      "id": 33
-    },
-    {
-      "player": "john",
-      "score": 2,
-      "id": 34
-    },
-    {
-      "player": "hello",
-      "score": 2,
-      "id": 35
-    },
-    {
-      "player": "hello",
-      "score": 1,
-      "id": 36
-    },
-    {
-      "player": "huhuh",
-      "score": 2,
-      "id": 37
-    },
-    {
-      "player": "john",
-      "score": 0,
-      "id": 38
-    },
-    {
-      "player": "hello",
-      "score": 2,
-      "id": 39
-    },
-    {
-      "player": "john",
-      "score": 1,
-      "id": 40
-    },
-    {
-      "player": "hello",
-      "score": 1,
-      "id": 41
-    },
-    {
-      "player": "hello",
-      "score": 1,
-      "id": 42
-    },
-    {
-      "player": "hello",
-      "score": 1,
-      "id": 43
-    },
-    {
-      "player": "john",
-      "score": 2,
-      "id": 44
-    },
-    {
-      "player": "hello",
-      "score": 0,
-      "id": 45
-    },
-    {
-      "player": "john",
-      "score": 1,
-      "id": 46
-    },
-    {
-      "player": "john",
-      "score": 1,
-      "id": 47
-    },
-    {
-      "player": "hello",
-      "score": 0,
-      "id": 48
     }
   ]
 }
