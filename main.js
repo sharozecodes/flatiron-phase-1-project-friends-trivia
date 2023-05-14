@@ -72,7 +72,8 @@ fetch("http://localhost:3000/questions")
 
         function endTrivia() {
             console.log(corrects);
-            viewScoreBoard();
+            tryAgain();
+            
 
 
             let newPlayer = { player: playerName, score: corrects };
@@ -85,12 +86,14 @@ fetch("http://localhost:3000/questions")
             }
             })
 
+            viewScoreBoard();
+
 
 
             const element = document.querySelector("#container");
             element.remove();
-            let formCont = document.querySelector('#form-container');
-            formCont.style.display = "flex";
+            // let formCont = document.querySelector('#form-container');
+            // formCont.style.display = "flex";
             const newContainer = document.createElement("div");
             newContainer.id = "container";
             document.body.appendChild(newContainer);
@@ -121,7 +124,7 @@ fetch("http://localhost:3000/questions")
                 currentQuestionIndex++;
                 if (currentQuestionIndex === questions.length) {
                     console.log('End of questionnaire!');
-                    newContainer.style.display = "none";
+                 //   newContainer.style.display = "none";
                     endTrivia();
                 }
                 showQuestion();
@@ -175,6 +178,14 @@ fetch("http://localhost:3000/questions")
         let container = document.querySelector('#container');
             container.style.display = "block"
             formContainer.style.display = "none"
+    }
+
+    function tryAgain(){
+        let formContainer = document.querySelector('#form-container');
+        let container = document.querySelector('#container');
+            container.style.display = "none"
+            formContainer.style.display = "flex"
+        
     }
       
 
