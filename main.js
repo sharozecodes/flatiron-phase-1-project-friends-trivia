@@ -8,6 +8,8 @@ fetch("http://localhost:3000/questions")
         let nextBtn = document.querySelector('#next-btn');
         let playBtn = document.querySelector('#play');
         let scoreBtn = document.querySelector('#score');
+        let replayBtn = document.querySelector('#replay');
+        let scorebBtn = document.querySelector('#scoreb');
         let currentQuestionIndex = 0;
         let playerName = '';
         //container.style.display = "none";
@@ -56,18 +58,20 @@ fetch("http://localhost:3000/questions")
                 currentQuestionIndex++;
                 if (currentQuestionIndex === questions.length) {
                     console.log('End of questionnaire!');
+                  //  displayGreeting(playerName, corrects, questions.length);
                     endTrivia();
                 }
                 showQuestion();
                 // console.log(corrects);
             } catch (error) {
-                alert("Please choose an option!");
+                alert("Please select an option!")
+                //console.log(error);
               }
         
         })
     
 
-        menuButtonEventListeners(playBtn, scoreBtn);
+        menuButtonEventListeners(playBtn, scoreBtn, replayBtn, scorebBtn);
         
         const form = document.querySelector("form");
         form.addEventListener("submit", (event) => {
@@ -90,7 +94,7 @@ fetch("http://localhost:3000/questions")
 
         function endTrivia() {
             console.log(corrects);
-            tryAgain();
+            displayResult();
             
 
             saveScore(playerName,corrects);
@@ -186,16 +190,20 @@ fetch("http://localhost:3000/questions")
       
     function startQuestions(){
         let choiceContainer = document.querySelector('#choice-container');
+        let resultContainer = document.querySelector('#result-container');
         let container = document.querySelector('#container');
             container.style.display = "block"
             choiceContainer.style.display = "none"
+            resultContainer.style.display = "none"
     }
 
     function tryAgain(){
         let formContainer = document.querySelector('#form-container');
+        let resultContainer = document.querySelector('#result-container');
         let container = document.querySelector('#container');
             container.style.display = "none"
             formContainer.style.display = "flex"
+            resultContainer.style.display = "none"
     }
 
     function saveScore(playerName, corrects){
@@ -220,7 +228,17 @@ fetch("http://localhost:3000/questions")
         
     }
 
-    function menuButtonEventListeners(playBtn, scoreBtn){
+    function displayResult(playerName, score, total){
+        let resultContainer = document.querySelector('#result-container');
+        let container = document.querySelector('#container');
+        let result = resultContainer.querySelector('#player-result');
+            container.style.display = "none"
+            resultContainer.style.display = "flex"
+            result.textContent = `Good Job ${playerName}!\nYou scored a ${score} out of ${total}!`;
+
+    }
+
+    function menuButtonEventListeners(playBtn, scoreBtn, replayBtn, scorebBtn){
         
         playBtn.addEventListener('click', () => {
             startQuestions();
@@ -228,6 +246,13 @@ fetch("http://localhost:3000/questions")
         scoreBtn.addEventListener('click', () => {
             viewScoreBoard();
         })
+        replayBtn.addEventListener('click', () => {
+            tryAgain();
+        })
+        scorebBtn.addEventListener('click', () => {
+            viewScoreBoard();
+        })
+    
     }
 
 

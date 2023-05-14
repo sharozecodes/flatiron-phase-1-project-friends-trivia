@@ -155,7 +155,7 @@ label {
     max-width: 400px;
   }
   
-  #play, #score {
+  #play, #score, #replay, #scoreb {
     padding: 10px 20px;
     border-radius: 10px;
     border: 0.3px;
@@ -175,3 +175,18 @@ label {
     background-color: #555;
   }
   
+  #result-container {
+
+    font-family: "GWFF";
+    font-size: 16px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 15px;
+    width: 530px;
+    height: 206px;
+    backdrop-filter: blur(3px);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
