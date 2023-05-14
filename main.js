@@ -146,8 +146,8 @@ fetch("http://localhost:3000/questions")
         fetch("http://localhost:3000/players")
             .then(resp => resp.json())
             .then(players => {
-
-                console.log(sortScoreBoard(players))})
+                console.log("hohoho")
+                createTable(sortScoreBoard(players))})
 
     }
 
@@ -253,5 +253,63 @@ fetch("http://localhost:3000/questions")
         return scoreBoard.sort((a, b) => b.score - a.score);
       }
       
+    function createTable(scoreBoard){
+        // const tableContainer = document.getElementById("table-container");
+        // const table = document.createElement('table');
+        
+        // // Create the rows and cells
+        // for (let i = 0; i < 5; i++) {
+        // // Create a row
+        // const row = document.createElement("tr");
+        // const cell = document.createElement("td");
+        // cell.textContent = `${scoreBoard[i].player} , ${scoreBoard[i].score}`;
+        // row.appendChild(cell);
+        // }
+
+        // // Create two cells
+        // for (let j = 0; j < 5; j++) {
+            
+        // }
+
+        // // Add the row to the table
+        // table.appendChild(row);
+        // }
+
+        // // Append the table to the div
+        // myDiv.appendChild(table);
+
+
+        // // Add the table to the document
+        // document.body.appendChild(table);
+
+        const tbody = document.getElementById('table-body');
+        while (tbody.firstChild) {
+            tbody.removeChild(tbody.firstChild);
+          }
+
+        // Loop through the array and create a new row for each object
+        for (let i = 0; i < scoreBoard.length; i++) {
+            if(i===10){
+                break; 
+            } else {
+
+            const player = scoreBoard[i].player;
+            const score = scoreBoard[i].score;
+
+            const row = document.createElement('tr');
+            const playerCell = document.createElement('td');
+            const scoreCell = document.createElement('td');
+
+            playerCell.textContent = player;
+            scoreCell.textContent = score;
+
+            row.appendChild(playerCell);
+            row.appendChild(scoreCell);
+
+            tbody.appendChild(row);
+        }
+        }
+
+    }
 
 
