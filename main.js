@@ -84,7 +84,7 @@ fetch("http://localhost:3000/questions")
             newContainer.id = "container";
             document.body.appendChild(newContainer);
             const tagLine = document.createElement('h2');
-            tagLine.textContent = "Could this task BE any easier?";
+            tagLine.textContent = "Could this question BE any easier?";
             const questionContainer = document.createElement("div");
             questionContainer.id = "question-container";
             const optContainer = document.createElement("div");
