@@ -57,6 +57,8 @@ span img {
 
 #form-container {
     
+    font-family: "GWFF";
+    font-size: 16px;
     margin-top: 1px;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.4);
@@ -131,10 +133,12 @@ label {
   
   #choice-container {
 
+    font-family: "GWFF";
+    font-size: 16px;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.4);
     padding: 15px;
-    min-width: 530px;
+    width: 530px;
     height: 206px;
     backdrop-filter: blur(3px);
     display: none;
@@ -154,8 +158,8 @@ label {
   #play, #score {
     padding: 10px 20px;
     border-radius: 10px;
-    border: none;
-    background-color: gray;
+    border: 0.3px;
+    background-color: rgba(117, 51, 4, 0.7);
     color: white;
     font-size: 18px;
     font-family: "GWFF";

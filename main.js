@@ -6,6 +6,8 @@ fetch("http://localhost:3000/questions")
         let container = document.querySelector('#question-container');
         let optionsContainer = document.querySelector('#options-container');
         let nextBtn = document.querySelector('#next-btn');
+        let playBtn = document.querySelector('#play');
+        let scoreBtn = document.querySelector('#score');
         let currentQuestionIndex = 0;
         let playerName = '';
         //container.style.display = "none";
@@ -47,24 +49,40 @@ fetch("http://localhost:3000/questions")
 
         showQuestion();
 
+
         nextBtn.addEventListener('click', () => {
-        checkAnswer();
-        currentQuestionIndex++;
-        if (currentQuestionIndex === questions.length) {
-            console.log('End of questionnaire!');
-            endTrivia();
-        }
-        showQuestion();
-        // console.log(corrects);
-        });
+            try {
+                checkAnswer();
+                currentQuestionIndex++;
+                if (currentQuestionIndex === questions.length) {
+                    console.log('End of questionnaire!');
+                    endTrivia();
+                }
+                showQuestion();
+                // console.log(corrects);
+            } catch (error) {
+                alert("Please choose an option!");
+              }
+        
+        })
+    
+
+        menuButtonEventListeners(playBtn, scoreBtn);
         
         const form = document.querySelector("form");
         form.addEventListener("submit", (event) => {
             event.preventDefault();
             playerName = event.target[0].value;
-            //console.log(playerName);
+            if (playerName === '')
+                alert('Please enter a name!');
+            else {
+                 //console.log(playerName);
             form.reset()
-            startQuestions();
+            displayGreeting(playerName);
+
+            }
+               
+           
 
 
         })
@@ -167,10 +185,10 @@ fetch("http://localhost:3000/questions")
       }
       
     function startQuestions(){
-        let formContainer = document.querySelector('#form-container');
+        let choiceContainer = document.querySelector('#choice-container');
         let container = document.querySelector('#container');
             container.style.display = "block"
-            formContainer.style.display = "none"
+            choiceContainer.style.display = "none"
     }
 
     function tryAgain(){
@@ -190,6 +208,26 @@ fetch("http://localhost:3000/questions")
             }
             })
     }
-      
+    
+    function displayGreeting(playerName) {
+        let formContainer = document.querySelector('#form-container');
+        let choiceContainer = document.querySelector('#choice-container');
+        let greeting = choiceContainer.querySelector('#greeting');
+
+        choiceContainer.style.display = "flex"
+        formContainer.style.display = "none"
+        greeting.textContent = `Hey there, ${playerName}! How you doin'?`
+        
+    }
+
+    function menuButtonEventListeners(playBtn, scoreBtn){
+        
+        playBtn.addEventListener('click', () => {
+            startQuestions();
+        })
+        scoreBtn.addEventListener('click', () => {
+            viewScoreBoard();
+        })
+    }
 
 
