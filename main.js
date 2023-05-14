@@ -107,10 +107,19 @@ fetch("http://localhost:3000/questions")
             const btn = document.createElement("button");
             btn.id = "next-btn";
             btn.textContent = "Next";
+            const imgContainer = document.createElement("div");
+            imgContainer.className = "overlay"
+            const imgHolder = document.createElement("img");
+            imgHolder.src = "./images/friends.PNG";
+            imgHolder.alt = "Overlay image";
+            imgContainer.appendChild(imgHolder);
+
+            
             newContainer.appendChild(tagLine);
             newContainer.appendChild(questionContainer);
             newContainer.appendChild(optContainer);
             newContainer.appendChild(btn);
+            newContainer.appendChild(imgContainer);
             corrects = 0;
             currentQuestionIndex = 0;
             container = document.querySelector('#question-container');
