@@ -147,7 +147,7 @@ fetch("http://localhost:3000/questions")
             .then(resp => resp.json())
             .then(players => {
 
-                console.log(players)})
+                console.log(sortScoreBoard(players))})
 
     }
 
@@ -248,5 +248,10 @@ fetch("http://localhost:3000/questions")
         })
     
     }
+
+    function sortScoreBoard(scoreBoard){
+        return scoreBoard.sort((a, b) => b.score - a.score);
+      }
+      
 
 

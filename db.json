@@ -46,6 +46,31 @@
       "player": "Juniper",
       "score": 4,
       "id": 1
+    },
+    {
+      "player": "john",
+      "score": 1,
+      "id": 2
+    },
+    {
+      "player": "Sharoze",
+      "score": 3,
+      "id": 3
+    },
+    {
+      "player": "hello",
+      "score": 4,
+      "id": 4
+    },
+    {
+      "player": "minal",
+      "score": 0,
+      "id": 5
+    },
+    {
+      "player": "Sharoze",
+      "score": 1,
+      "id": 6
     }
   ]
 }
