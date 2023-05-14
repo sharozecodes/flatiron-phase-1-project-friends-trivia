@@ -3,7 +3,6 @@ fetch("http://localhost:3000/questions")
     .then(questions => {
 
         let corrects = 0;
-        let formContainer = document.querySelector('#form-container');
         let container = document.querySelector('#question-container');
         let optionsContainer = document.querySelector('#options-container');
         let nextBtn = document.querySelector('#next-btn');
@@ -65,9 +64,7 @@ fetch("http://localhost:3000/questions")
             playerName = event.target[0].value;
             //console.log(playerName);
             form.reset()
-            let container = document.querySelector('#container');
-            container.style.display = "block"
-            formContainer.style.display = "none"
+            startQuestions();
 
 
         })
@@ -173,7 +170,12 @@ fetch("http://localhost:3000/questions")
         }
       }
       
-      
+    function startQuestions(){
+        let formContainer = document.querySelector('#form-container');
+        let container = document.querySelector('#container');
+            container.style.display = "block"
+            formContainer.style.display = "none"
+    }
       
 
 
