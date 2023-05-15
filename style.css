@@ -12,10 +12,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
   }
   
-
 #page-title {
     font-family: "GWFF";
     font-size: x-large;
@@ -30,11 +28,10 @@ body {
 
 span {
     display: inline-block;
-    height: 200px; /* Set the height of the image */
-    width: 200px; /* Set the width of the image */
-    font-size: 200px; /*Set the font size to the same value as the image dimensions*/
-    vertical-align: middle; /* Vertically align the span to center it within the text */
-    
+    height: 200px;
+    width: 200px;
+    font-size: 200px;
+    vertical-align: middle; 
   }
 
 span img {
@@ -45,25 +42,18 @@ span img {
   }
 
 #container {
-
     position: relative;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.4);
     margin-top: -37px;
     padding: 18px;
     width: 530px;
-   /* padding-top: 65px;
-    height: 293px; 
-    padding-bottom: 0px; */
     height: 340px;
     backdrop-filter: blur(3px);
     display: none;
   }
 
-
-
-#form-container {
-    
+#form-container {   
     font-family: "GWFF";
     font-size: 16px;
     margin-top: -37px;
@@ -88,7 +78,6 @@ span img {
         0.9px -0.9px 0 black,
         -0.9px 0.9px 0 black,
         0.9px 0.9px 0 black;
-
   }
 
 h2 {
@@ -108,7 +97,6 @@ label {
         0.9px -0.9px 0 black,
         -0.9px 0.9px 0 black,
         0.9px 0.9px 0 black;
-
   }
 
 #next-btn {
@@ -122,15 +110,14 @@ label {
 
   }
 
-#toast-container {
+  #toast-container {
     position: fixed;
-    top: 490px;
-    left: 290px;
-    transform: translate(-50%, -50%);
+    bottom: 20px;
+    right: 20px;
     z-index: 9999;
   }
   
-#toast {
+  #toast {
     padding: 5px 10px;
     display: none;
     justify-content: center;
@@ -138,15 +125,15 @@ label {
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.4);
     color: #fff;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    margin: 0 auto;
   }
-
-
-
-
-
   
   #choice-container {
-
     font-family: "GWFF";
     font-size: 16px;
     border-radius: 10px;
@@ -162,7 +149,6 @@ label {
     justify-content: center;
   }
 
-  
   .buttons-container {
     display: flex;
     justify-content: space-between;
@@ -191,7 +177,6 @@ label {
   }
   
   #result-container {
-
     font-family: "GWFF";
     font-size: 16px;
     border-radius: 10px;
@@ -215,7 +200,6 @@ label {
   }
 
   #score-container {
-
     font-family: "GWFF";
     font-size: 16px;
     border-radius: 10px;

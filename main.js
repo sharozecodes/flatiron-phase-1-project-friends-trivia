@@ -36,11 +36,11 @@ fetch("http://localhost:3000/questions")
         const answer = questions[currentQuestionIndex].answer;
         if (selectedOption === answer) {
             toastColor("green");
-            showToast('Perfection!', 300);
+            showToast('Perfection!', 1000);
             corrects++;
         } else {
             toastColor("red");
-            showToast('Moo Point!', 300);
+            showToast('Moo Point!', 1000);
         }
         }
 
