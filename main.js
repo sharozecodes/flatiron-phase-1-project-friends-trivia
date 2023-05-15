@@ -2,6 +2,7 @@ fetch("http://localhost:3000/questions")
     .then(resp => resp.json())
     .then(questions => {
 
+        //Catching all the elements for later use
         let corrects = 0;
         let container = document.querySelector('#question-container');
         let optionsContainer = document.querySelector('#options-container');
@@ -14,6 +15,7 @@ fetch("http://localhost:3000/questions")
         let currentQuestionIndex = 0;
         let playerName = '';
 
+        //Putting questions from the extracted object array to the DOM
         function showQuestion() {
             const currentQuestion = questions[currentQuestionIndex];
             container.textContent = currentQuestion.question;
@@ -31,6 +33,7 @@ fetch("http://localhost:3000/questions")
             })
         }
         
+        //Checking the answers and notifying
         function checkAnswer() {
         const selectedOption = document.querySelector('input[name="option"]:checked').value;
         const answer = questions[currentQuestionIndex].answer;
@@ -46,6 +49,7 @@ fetch("http://localhost:3000/questions")
 
         showQuestion();
 
+        //Adding eventListeners
         nextBtn.addEventListener('click', () => {
             try {
                 checkAnswer();
@@ -73,13 +77,16 @@ fetch("http://localhost:3000/questions")
             }
         })
 
-
+        //Logic for wrapping up one round
         function endTrivia() {
             displayResult(playerName, corrects, questions.length);
             saveScore(playerName,corrects);
             const element = document.querySelector("#container");
+
+            //Clears the container
             element.remove();
 
+            //Making new container
             const newContainer = document.createElement("div");
             newContainer.id = "container";
             document.body.appendChild(newContainer);
@@ -126,6 +133,7 @@ fetch("http://localhost:3000/questions")
     });
 
 
+    //Fetching data to view from the players field
     function viewScoreBoard(){
         fetch("http://localhost:3000/players")
             .then(resp => resp.json())
@@ -134,6 +142,7 @@ fetch("http://localhost:3000/questions")
         displayScoreboard();
     }
 
+    //Logic to display the correct or incorrect notification
     function showToast(message, duration = 3000) {
         const toastContainer = document.getElementById('toast-container');
         const toast = document.getElementById('toast');
@@ -147,7 +156,7 @@ fetch("http://localhost:3000/questions")
         }, duration);
     }
 
-
+    //Defining the notification color for the answer check
     function toastColor(color) {
         const notification = document.getElementById("toast");
         if (color.toLowerCase() === "green") {
@@ -156,7 +165,8 @@ fetch("http://localhost:3000/questions")
           notification.style["background-color"] = 'rgba(255, 0, 0, 0.4)';
         }
     }
-      
+    
+    //Code to make questions container visible
     function startQuestions(){
         let choiceContainer = document.querySelector('#choice-container');
         let resultContainer = document.querySelector('#result-container');
@@ -168,6 +178,7 @@ fetch("http://localhost:3000/questions")
             scoreContainer.style.display = "none"
     }
 
+    //Code to make form container visible
     function tryAgain(){
         let formContainer = document.querySelector('#form-container');
         let resultContainer = document.querySelector('#result-container');
@@ -179,6 +190,7 @@ fetch("http://localhost:3000/questions")
             scoreContainer.style.display = "none"
     }
 
+    //Code to make score container visible
     function displayScoreboard(){
         let formContainer = document.querySelector('#form-container');
         let resultContainer = document.querySelector('#result-container');
@@ -192,6 +204,7 @@ fetch("http://localhost:3000/questions")
             scoreContainer.style.display = "flex"
     }
 
+    //Saving the score to the db.json using POST request
     function saveScore(playerName, corrects){
         let newPlayer = { player: playerName, score: corrects };
             fetch("http://localhost:3000/players", {
@@ -203,6 +216,7 @@ fetch("http://localhost:3000/questions")
             })
     }
     
+    //Code to display the greeting and the menu screen
     function displayGreeting(playerName) {
         let formContainer = document.querySelector('#form-container');
         let choiceContainer = document.querySelector('#choice-container');
@@ -215,6 +229,7 @@ fetch("http://localhost:3000/questions")
         greeting.textContent = `Hey there, ${playerName}! How you doin'?`        
     }
 
+    //Code to make result container visible
     function displayResult(playerName, score, total){
         let resultContainer = document.querySelector('#result-container');
         let container = document.querySelector('#container');
@@ -231,6 +246,7 @@ fetch("http://localhost:3000/questions")
         scoreTotal.textContent = `You scored a ${score} out of ${total}.`;
     }
 
+    //Function to add EvenListeners to similar buttons
     function menuButtonEventListeners(playBtn, scoreBtn, replayBtn, scorebBtn, backBtn){
         
         playBtn.addEventListener('click', () => {
@@ -250,6 +266,7 @@ fetch("http://localhost:3000/questions")
         })
     }
 
+    //Sorting the retrieved scoreboard first by score then by ID
     function sortScoreBoard(scoreBoard){
        return scoreBoard.sort((a, b) => {
             if (a.score === b.score) {
@@ -259,26 +276,28 @@ fetch("http://localhost:3000/questions")
           });    
       }
 
-      function getGrade(percentage) {
+    //Generating custom captions as per grade
+    function getGrade(percentage) {
         if (percentage >= 0.9) {
-          return 'Excellent job';
+            return 'Excellent job';
         } else if (percentage >= 0.8) {
-          return 'Well done'
+            return 'Well done'
         } else if (percentage >= 0.7) {
-          return 'Good job'
+            return 'Good job'
         } else if (percentage >= 0.6) {
-          return 'Not bad'
+            return 'Not bad'
         } else {
             return "Yeah! We're definitely on a break"
-          };
+            };
         }
          
+    //Creating scoreboard table
     function createTable(scoreBoard){
         const tbody = document.getElementById('table-body');
         while (tbody.firstChild) {
             tbody.removeChild(tbody.firstChild);
           }
-
+          
         for (let i = 0; i < scoreBoard.length; i++) {
             if(i===5){
                 break; 

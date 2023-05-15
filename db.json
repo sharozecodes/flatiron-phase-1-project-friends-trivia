@@ -49,33 +49,163 @@
         "Grove Street"
       ],
       "answer": "Grove Street"
+    },
+    {
+      "question": "What is the name of Ross's pet monkey?",
+      "options": [
+        "Mojo",
+        "Marcel",
+        "Max",
+        "Mickey"
+      ],
+      "answer": "Marcel"
+    },
+    {
+      "question": "Which two Friends characters end up getting married in Las Vegas after a drunken night out?",
+      "options": [
+        "Chandler and Monica",
+        "Ross and Rachel",
+        "Joey and Phoebe",
+        "Rachel and Monica"
+      ],
+      "answer": "Ross and Rachel"
+    },
+    {
+      "question": "What does Joey never share?",
+      "options": [
+        "His food",
+        "His apartment",
+        "His money",
+        "His clothes"
+      ],
+      "answer": "His food"
+    },
+    {
+      "question": "What is Chandler's middle name?",
+      "options": [
+        "Bing",
+        "Muriel",
+        "Bob",
+        "Ross"
+      ],
+      "answer": "Muriel"
+    },
+    {
+      "question": "What is the name of the actress who plays Rachel?",
+      "options": [
+        "Jennifer Aniston",
+        "Courteney Cox",
+        "Lisa Kudrow",
+        "Jennifer Lawrence"
+      ],
+      "answer": "Jennifer Aniston"
+    },
+    {
+      "question": "What is the name of Ross's ex-wife?",
+      "options": [
+        "Emily",
+        "Carol",
+        "Susan",
+        "Mona"
+      ],
+      "answer": "Carol"
+    },
+    {
+      "question": "What is the name of Ross's son?",
+      "options": [
+        "Jack",
+        "Joey",
+        "Ben",
+        "Jesse"
+      ],
+      "answer": "Ben"
+    },
+    {
+      "question": "What is the name of Joey's imaginary friend?",
+      "options": [
+        "Bob",
+        "Sockie",
+        "Maurice",
+        "Gunther"
+      ],
+      "answer": "Maurice"
+    },
+    {
+      "question": "What is the name of the high school student who Rachel hires to help her with her apartment move?",
+      "options": [
+        "Danny",
+        "Frankie",
+        "Gavin",
+        "Nate"
+      ],
+      "answer": "Tag"
+    },
+    {
+      "question": "What is the name of the woman who gives birth to Ross's son?",
+      "options": [
+        "Susan",
+        "Carol",
+        "Emily",
+        "Mona"
+      ],
+      "answer": "Carol"
+    },
+    {
+      "question": "What is the name of Chandler's father's Las Vegas all-male burlesque show?",
+      "options": [
+        "Viva Las Gaygas",
+        "Men on Men",
+        "The Chippendales",
+        "The Thunder from Down Under"
+      ],
+      "answer": "Viva Las Gaygas"
+    },
+    {
+      "question": "What is the name of the roommate who Ross has a crush on in season 6?",
+      "options": [
+        "Monica",
+        "Phoebe",
+        "Emily",
+        "Elizabeth"
+      ],
+      "answer": "Elizabeth"
+    },
+    {
+      "question": "What is the name of Ross and Monica's dad?",
+      "options": [
+        "Jack",
+        "Bob",
+        "Richard",
+        "Frank"
+      ],
+      "answer": "Jack"
+    },
+    {
+      "question": "What is the name of Joey's stuffed penguin?",
+      "options": [
+        "Waddles",
+        "Huggsy",
+        "Mr. Penguino",
+        "Pecky"
+      ],
+      "answer": "Huggsy"
+    },
+    {
+      "question": "What is the name of the character played by Bruce Willis who dates Rachel?",
+      "options": [
+        "Paul Stevens",
+        "David Schwimmer",
+        "Ross Geller",
+        "Walter White"
+      ],
+      "answer": "Paul Stevens"
     }
   ],
   "players": [
     {
-      "player": "John",
-      "score": 2,
-      "id": 1
-    },
-    {
-      "player": "Jay",
-      "score": 5,
-      "id": 2
-    },
-    {
-      "player": "Tom",
-      "score": 4,
-      "id": 3
-    },
-    {
-      "player": "Thompson",
-      "score": 4,
-      "id": 4
-    },
-    {
       "player": "Sharoze",
-      "score": 1,
-      "id": 5
+      "score": 17,
+      "id": 1
     }
   ]
 }
