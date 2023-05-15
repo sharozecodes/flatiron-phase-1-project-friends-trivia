@@ -53,69 +53,29 @@
   ],
   "players": [
     {
-      "player": "john",
-      "score": 4,
+      "player": "John",
+      "score": 2,
       "id": 1
     },
     {
-      "player": "Sharoze",
-      "score": 0,
+      "player": "Jay",
+      "score": 5,
       "id": 2
     },
     {
-      "player": "minal",
-      "score": 2,
+      "player": "Tom",
+      "score": 4,
       "id": 3
     },
     {
-      "player": "huhuh",
-      "score": 1,
+      "player": "Thompson",
+      "score": 4,
       "id": 4
     },
     {
-      "player": "hello",
-      "score": 0,
-      "id": 5
-    },
-    {
-      "player": "Juniper",
-      "score": 3,
-      "id": 6
-    },
-    {
-      "player": "minal",
-      "score": 5,
-      "id": 7
-    },
-    {
-      "player": "hello",
-      "score": 2,
-      "id": 8
-    },
-    {
       "player": "Sharoze",
-      "score": 5,
-      "id": 9
-    },
-    {
-      "player": "john",
-      "score": 3,
-      "id": 10
-    },
-    {
-      "player": "Jonathon",
-      "score": 4,
-      "id": 11
-    },
-    {
-      "player": "Sharoze",
-      "score": 5,
-      "id": 12
-    },
-    {
-      "player": "john",
       "score": 1,
-      "id": 13
+      "id": 5
     }
   ]
 }
