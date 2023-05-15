@@ -122,7 +122,7 @@ fetch("http://localhost:3000/questions")
                     alert("Please select an option!")
                   }
                 })
-        }
+            }
     });
 
 
@@ -145,7 +145,7 @@ fetch("http://localhost:3000/questions")
         setTimeout(() => {
           toastContainer.style.display = 'none';
         }, duration);
-      }
+    }
 
 
     function toastColor(color) {
@@ -155,7 +155,7 @@ fetch("http://localhost:3000/questions")
         } else {
           notification.style["background-color"] = 'rgba(255, 0, 0, 0.4)';
         }
-      }
+    }
       
     function startQuestions(){
         let choiceContainer = document.querySelector('#choice-container');
@@ -212,8 +212,7 @@ fetch("http://localhost:3000/questions")
         choiceContainer.style.display = "flex"
         formContainer.style.display = "none"
         scoreContainer.style.display = "none"
-        greeting.textContent = `Hey there, ${playerName}! How you doin'?`
-        
+        greeting.textContent = `Hey there, ${playerName}! How you doin'?`        
     }
 
     function displayResult(playerName, score, total){
@@ -249,7 +248,6 @@ fetch("http://localhost:3000/questions")
         backBtn.addEventListener('click', () => {
             tryAgain();
         })
-    
     }
 
     function sortScoreBoard(scoreBoard){
@@ -258,8 +256,7 @@ fetch("http://localhost:3000/questions")
               return b.id - a.id;
             }
             return b.score - a.score;
-          });
-          
+          });    
       }
 
       function getGrade(percentage) {
@@ -275,7 +272,6 @@ fetch("http://localhost:3000/questions")
             return "Yeah! We're definitely on a break"
           };
         }
-      
          
     function createTable(scoreBoard){
         const tbody = document.getElementById('table-body');
@@ -302,7 +298,6 @@ fetch("http://localhost:3000/questions")
             tbody.appendChild(row);
         }
         }
-
     }
 
 

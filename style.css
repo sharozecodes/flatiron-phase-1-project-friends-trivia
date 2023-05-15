@@ -107,8 +107,19 @@ label {
     border: none;
     border-radius: 6px;
     padding: 5px 10px;
-
   }
+
+  #submit{
+    float: right;
+    background-color: rgba(117, 51, 4, 0.7);
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    padding: 3px;
+  }
+
+
 
   #toast-container {
     position: fixed;
